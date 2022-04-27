@@ -15,22 +15,24 @@ from torchvision.transforms import ToTensor
 training_data = datasets.FashionMNIST(
     root="data",
     train=True,
-    download=True,
+    download=False,
     transform=ToTensor(),
 )
 
-# Download test data from open datasets.
+# # Download test data from open datasets.
 test_data = datasets.FashionMNIST(
     root="data",
     train=False,
-    download=True,
+    download=False,
     transform=ToTensor(),
 )
 
 
 batch_size = 64
 
+
 # Create data loaders.
+import pdb; pdb.set_trace()
 train_dataloader = DataLoader(training_data, batch_size=batch_size)
 test_dataloader = DataLoader(test_data, batch_size=batch_size)
 
